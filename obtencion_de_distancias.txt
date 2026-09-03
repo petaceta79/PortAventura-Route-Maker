@@ -1,0 +1,135 @@
+====================================================================
+OBTENCION DE DISTANCIAS - PortAventura Router
+====================================================================
+
+--------------------------------------------------------------------
+1. PROBLEMA INICIAL
+--------------------------------------------------------------------
+
+El algoritmo de rutas necesita, para cada par de atracciones del
+parque, cuanto se tarda en ir andando de una a otra. Con 47
+atracciones son 47x46/2 = 1081 parejas.
+
+La distancia no puede ser en linea recta entre dos coordenadas GPS,
+porque el camino real dentro del parque no es recto (hay edificios,
+vegetacion, rios artificiales, vallas). Hace falta la distancia real
+caminando, siguiendo el trazado de los senderos internos.
+
+
+--------------------------------------------------------------------
+2. FORMATO REQUERIDO
+--------------------------------------------------------------------
+
+Tres ficheros JSON/CSV, encadenados:
+
+  data/queue_times.json
+  -----------------------
+  Lista de atracciones con su nombre exacto (clave usada en todos
+  los demas ficheros) y su tiempo de cola actual:
+
+    {
+      "rides": [
+        {"name": "Dragon Khan", "wait_time": 0, "is_open": false, ...},
+        {"name": "Shambhala",   "wait_time": 0, "is_open": false, ...},
+        ...
+      ]
+    }
+
+  data/coordinates.json
+  -----------------------
+  Nombre de atraccion -> coordenadas GPS:
+
+    {
+      "Dragon Khan": {"lat": 41.0878, "lng": 1.1584},
+      "Shambhala":   {"lat": 41.0870, "lng": 1.1591},
+      ...
+    }
+
+  data/distances.json
+  -----------------------
+  Distancia real en metros para cada pareja. La clave son los dos
+  nombres unidos por "|", SIEMPRE en orden alfabetico (para que
+  "Dragon Khan / Shambhala" y "Shambhala / Dragon Khan" sean la
+  misma entrada y no se dupliquen ni se guarden las dos direcciones):
+
+    {
+      "unit": "meters",
+      "source": "manual",
+      "distances": {
+        "Dragon Khan|Furius Baco": 180.0,
+        "Dragon Khan|Shambhala": 300.0,
+        "Furius Baco|Shambhala": 250.0,
+        ...
+      }
+    }
+
+  1081 entradas en total para las 47 atracciones, ni una mas ni una
+  menos (sin pares repetidos ni invertidos).
+
+
+--------------------------------------------------------------------
+3. OBTENCION DE LOS DATOS
+--------------------------------------------------------------------
+
+  PASO 1 - Nombres y colas actuales
+  --------------------------------------------------------------
+  Script: get_queue_times.py
+
+  Llama a la API publica de queue-times.com (park_id=19) y genera
+  data/queue_times.json con las 47 atracciones.
+
+
+  PASO 2 - Coordenadas GPS de cada atraccion
+  --------------------------------------------------------------
+  Script: geocode_attractions.py
+
+  Para cada nombre de queue_times.json, busca su posicion con la
+  Places API de Google (busqueda de texto sesgada a la zona del
+  parque) y genera data/coordinates.json.
+
+
+  PASO 3 - Distancia real caminando, pareja a pareja (MANUAL)
+  --------------------------------------------------------------
+  Scripts: fill_distances_interactive.py + parse_filled_pairs.py
+
+  Se descarto usar la API de rutas de Google (Distance Matrix /
+  Routes API) para este paso porque sus Terminos de Servicio de
+  Maps Platform prohiben explicitamente exportar o extraer en bloque
+  "resultados de matriz de distancia" para uso fuera de sus propios
+  servicios. En su lugar, la obtencion se hace de forma manual desde
+  el propio navegador, sin usar ninguna API de pago:
+
+    1. fill_distances_interactive.py genera primero
+       data/pares_a_rellenar.csv con las 1081 parejas unicas
+       (itertools.combinations sobre los nombres ya ordenados
+       alfabeticamente, que por construccion nunca genera una
+       pareja y su inversa).
+
+    2. El script va abriendo en el navegador, una a una, la pagina
+       normal de Google Maps (maps.google.com, sin API) con la ruta
+       a pie entre cada pareja pendiente, usando las coordenadas de
+       coordinates.json para que abra el sitio exacto.
+
+    3. La persona lee en pantalla la distancia (con la herramienta
+       de medir de Maps, anadiendo puntos intermedios si el camino
+       curva) y la escribe en la terminal. Es una lectura y
+       transcripcion manual, no una extraccion automatizada de
+       datos: no hay ningun codigo que descargue o parsee la pagina,
+       por lo que no aplica la clausula de "No Scraping" de los
+       terminos de Maps Platform (esa clausula rige el uso de la
+       API con clave de desarrollador, no la navegacion manual de
+       una persona por el sitio web publico).
+
+    4. Cada respuesta se guarda EN EL ACTO en el CSV (se reescribe
+       el fichero completo tras cada dato introducido), asi que el
+       proceso se puede interrumpir en cualquier momento (cerrar la
+       terminal, Ctrl+C, o escribir "salir") sin perder lo ya hecho.
+       Al volver a ejecutar el script, continua automaticamente en
+       la primera pareja que quedo sin rellenar. Si el CSV ya esta
+       completo, el script lo detecta, avisa, y no abre ni pregunta
+       nada.
+
+    5. Una vez completo el CSV, parse_filled_pairs.py lo convierte
+       en data/distances.json, aceptando tanto punto como coma
+       decimal, e ignorando (con aviso) filas vacias o con texto no
+       numerico sin romper el resto del fichero.

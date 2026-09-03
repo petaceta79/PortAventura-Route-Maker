@@ -1,0 +1,335 @@
+{
+  "fetched_at": "2026-08-30T11:39:43.369282+00:00",
+  "park_id": 19,
+  "rides": [
+    {
+      "name": "Angkor",
+      "land": "Sin zona",
+      "wait_time": 30,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Armadillos",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Buffalo Rodeo",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Canoes",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Carousel",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Cobra imperial",
+      "land": "Sin zona",
+      "wait_time": 5,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Coco Piloto",
+      "land": "Sin zona",
+      "wait_time": 25,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Crazy Barrels",
+      "land": "Sin zona",
+      "wait_time": 10,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Dragon Khan",
+      "land": "Sin zona",
+      "wait_time": 40,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "El Árbol Mágico",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "El Diablo - Tren De La Mina",
+      "land": "Sin zona",
+      "wait_time": 40,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "El Huerto Encantado",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "El Salto de Blas",
+      "land": "Sin zona",
+      "wait_time": 20,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "El Secreto de los Mayas",
+      "land": "Sin zona",
+      "wait_time": 10,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Estació del Nord",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": false,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Furius Baco",
+      "land": "Sin zona",
+      "wait_time": 50,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Grand Canyon Rapids",
+      "land": "Sin zona",
+      "wait_time": 20,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Hurakan Condor",
+      "land": "Sin zona",
+      "wait_time": 45,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Kiddie Balloons",
+      "land": "Sin zona",
+      "wait_time": 15,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Kiddie Dragons",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Kiddie Kities",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Kontiki",
+      "land": "Sin zona",
+      "wait_time": 10,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "La Granja de Elmo",
+      "land": "Sin zona",
+      "wait_time": 30,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Laberinto Blacksmith",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": false,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Los Potrillos",
+      "land": "Sin zona",
+      "wait_time": 5,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Magic Fish",
+      "land": "Sin zona",
+      "wait_time": 20,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Makamanu Summit",
+      "land": "Sin zona",
+      "wait_time": 25,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Makamanu Trail",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": false,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Mariposas Saltarinas",
+      "land": "Sin zona",
+      "wait_time": 15,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Penitence Station",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Serpiente Emplumada",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": false,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "SésamoAventura Station",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": false,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Shambhala",
+      "land": "Sin zona",
+      "wait_time": 35,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Silver River Flume",
+      "land": "Sin zona",
+      "wait_time": 50,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Stampida",
+      "land": "Sin zona",
+      "wait_time": 40,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Street Mission",
+      "land": "Sin zona",
+      "wait_time": 40,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Tami - Tami",
+      "land": "Sin zona",
+      "wait_time": 25,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Tea Cups",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Templo del Fuego",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": false,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Tomahawk",
+      "land": "Sin zona",
+      "wait_time": 40,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Tutuki Splash",
+      "land": "Sin zona",
+      "wait_time": 40,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "ULUM: El despertar jurásico",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": false,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Uncharted",
+      "land": "Sin zona",
+      "wait_time": 70,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "VolPaiute",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": false,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Waikiki",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Wild Buffalos",
+      "land": "Sin zona",
+      "wait_time": 15,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    },
+    {
+      "name": "Yucatán",
+      "land": "Sin zona",
+      "wait_time": 0,
+      "is_open": true,
+      "last_updated": "2026-08-30T11:36:48.000Z"
+    }
+  ]
+}

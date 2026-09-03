@@ -1,0 +1,38 @@
+name: Recolectar colas PortAventura
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  recolectar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install -r Obtener_tiempos_espera/requirements.txt
+
+      - name: Obtener snapshot de colas
+        run: python3 Obtener_tiempos_espera/collect_snapshot_once.py
+
+      - name: Guardar el nuevo dato en el repositorio
+        run: |
+          git config user.name "recolector-bot"
+          git config user.email "recolector-bot@users.noreply.github.com"
+          git add Obtener_tiempos_espera/data/history.jsonl
+          if ! git diff --staged --quiet; then
+            git commit -m "Snapshot $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git pull --rebase origin main
+            git push
+          fi
