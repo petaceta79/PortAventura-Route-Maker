@@ -2,7 +2,8 @@ name: Recolectar colas PortAventura
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    # Cada 10 minutos de 06:00 a 23:50 UTC (cubre de 08:00 a 01:50 hora de España)
+    - cron: "*/10 6-23 * * *"
   workflow_dispatch: {}
 
 permissions:
